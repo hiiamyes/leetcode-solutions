@@ -1,4 +1,6 @@
-# \#104. Maximum Depth of Binary Tre
+# [Algorithms - Easy](https://leetcode.com/problemset/algorithms/?difficulty=Easy)
+
+## \#104. Maximum Depth of Binary Tre
 * 2017-10-08
 * 第一次真的秒殺 + bug free 耶耶
 * 142ms, 21.47%
@@ -21,7 +23,7 @@ return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 ```
 
-# \#9 - Palindrome Number
+## \#9 - Palindrome Number
 
 * 一開始不知道 palindrome number 是什麼ＸＤ
 * 重點應該在怎麼 **Do this without extra space**，因為這樣就不能用 string split reverse 做了
@@ -46,7 +48,7 @@ i++;
 return true;
 };
 
-# \#13 Roman to Integer
+## \#13 Roman to Integer
 
 * 我竟然不知道 roman numeral 是啥 Orz
 * 感覺又有 add 又有 subtract 的邏輯好麻煩（wiki 說的）
@@ -85,7 +87,7 @@ return result;
 };
 ```
 
-# \#14 Longest Common Prefix
+## \#14 Longest Common Prefix
 
 * 什麼是 common prefix string?
 ```
@@ -152,7 +154,7 @@ return LCP;
 };
 ```
 
-# \#20 Valid Parentheses
+## \#20 Valid Parentheses
 
 * 感覺應該稍簡單，直覺想用 regexp 解
 * 但發現好像不太好用 regexp XD
@@ -206,7 +208,7 @@ return result.length === 0;
 };
 
 ```
-# \#21. Merge Two Sorted Lists
+## \#21. Merge Two Sorted Lists
 * 很好，sorted linked list 是什麼...，再被戳破沒修過資結
 * splicing together the nodes of the first two lists 是什麼意思？
 * 決定直接看 solution 學 = =+
@@ -250,7 +252,7 @@ return l2;
 * 其實還滿直覺的吼
 * 888ms，超出 statistics graph XDD
 
-# \#26. Remove Duplicates from Sorted Array
+## \#26. Remove Duplicates from Sorted Array
 
 * in place 的定義應該要好好搞清楚一下
 * In-place means that you should update the original string rather than creating a new one.
@@ -280,7 +282,7 @@ return nums.length;
 };
 
 ```
-# \#27. Remove Element
+## \#27. Remove Element
 * 2017-07-12
 * 嗯... 一開始不太想用 splice，想說有沒有什麼特別又快的方法
 * 結果打完球太累不想花腦袋了直接用 splice 解ＸＤ
@@ -307,7 +309,7 @@ return nums.length;
 };
 \`\`\`
 
-# \#28. Implement strStr\(\)
+## \#28. Implement strStr\(\)
 
 * 2017-07-12
 * RexExp 瞬殺～
@@ -327,7 +329,7 @@ return -1
 };
 ```
 
-# \#35. Search Insert Position
+## \#35. Search Insert Position
 
 * 2017-07-13
 * 喔耶秒殺，雖然還是看起來笨笨的 while + if 解法
@@ -352,7 +354,7 @@ return i;
 };
 ```
 
-# \#38. Count and Say
+## \#38. Count and Say
 
 * 2017-07-17
 * 一開始搞錯規則，沒想到 111 是要變成 31 而不是 2111 = =
@@ -381,7 +383,7 @@ count = 1;
 return say;
 };
 
-# \#53. Maximum Subarray
+## \#53. Maximum Subarray
 
 * 2017-07-19
 * contiguous subarray 是啥咪東西 = =
@@ -417,7 +419,7 @@ return highestValue;
 };
 ```
 
-# \#58. Length of Last Word
+## \#58. Length of Last Word
 
 * 2017-07-19
 * 還以為終於可以一次 bug free，殊不知沒考慮到 "a " 要先 trim。ＱＱ
@@ -433,7 +435,7 @@ return words[words.length - 1].replace(" ", "").length;
 };
 ```
 
-# \#66. Plus One
+## \#66. Plus One
 
 * 2017-07-19
 * 就只是單純要把數字 +1 嗎＝＝？
@@ -468,7 +470,7 @@ return digits;
 };
 ```
 
-# \#67. Add Binary
+## \#67. Add Binary
 
 * 2017-07-21
 * 怎麼感覺好簡單但一時之間不知道怎麼解...
@@ -503,7 +505,7 @@ return result.join("");
 };
 ```
 
-# \#69. Sqrt\(x\)
+## \#69. Sqrt\(x\)
 
 * 2017-08-05
 * 原來要用牛頓法啊... \(幾百年前的數學\)
@@ -541,7 +543,7 @@ return sqrt;
 
 
 
-# \#70. Climbing Stairs
+## \#70. Climbing Stairs
 
 * 2017-08-05
 * 喔耶瞬殺～ 排列組合好好玩～～
@@ -576,7 +578,7 @@ return result;
 
 ```
 
-# \#83. Remove Duplicates from Sorted List
+## \#83. Remove Duplicates from Sorted List
 * 2017-08-10
 * 一開始想先做 DP 出也是 linked list 的結果再 output array result 但失敗了
 * 最後用的單純的方法直接 output array result
@@ -604,7 +606,7 @@ return result;
 };
 ```
 
-# \#88. Merge Sorted Array
+## \#88. Merge Sorted Array
 * 2017-08-12
 * 原本想說有沒有什麼可以不用 javascript built-in function 的方法，但最後還是用了 splice 和 shift
 * 為什麼 input 會有 [0]0[1]1 這種 case = =，[0]不是算 size 1 喔...
@@ -629,7 +631,7 @@ m !== 0 && nums1[m - 1] > nums2[n - 1] ? nums1[--m] : nums2[--n];
 };
 ```
 
-# \#100. Same Tree
+## \#100. Same Tree
 * 2017-08-13
 * 秒殺耶耶
 * 105 ms, 60.46%
@@ -658,7 +660,7 @@ isSameTree(p.right, q.right)
 };
 ```
 
-# \#101. Symmetric Tree
+## \#101. Symmetric Tree
 * 2017-09-19
 * recursive 好像比較直覺，就每個 node 都確保他是 symmetric 就好，錯了這樣不對 = = [1223443] 就爆了
 * [1, 2] === [1, 2] 是 false @@???
