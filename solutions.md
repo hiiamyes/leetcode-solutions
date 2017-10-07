@@ -7,19 +7,19 @@
 
 ```
 /**
-* Definition for a binary tree node.
-* function TreeNode(val) {
-* this.val = val;
-* this.left = this.right = null;
-* }
-*/
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
 /**
-* @param {TreeNode} root
-* @return {number}
-*/
+ * @param {TreeNode} root
+ * @return {number}
+ */
 var maxDepth = function(root) {
-if (root === null) return 0;
-return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+  if (root === null) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 ```
 
@@ -31,22 +31,23 @@ return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 * 378ms, 40.04%
 * 看了別人的解法覺得好好笑又好強ＸＤ
 
-/\*\*
-
+```
+/**
 * @param {number} x
 * @return {boolean}
-\*/
-var isPalindrome = function\(x\) {
-if \(x &lt; 0\) return false;
-const numberArray = `${x}`.split\(""\);
-const numberArrayLength = numberArray.length;
-var i = 0;
-while \(i &lt;= Math.ceil\(numberArrayLength / 2\)\) {
-if \(numberArray\[i\] !== numberArray\[numberArrayLength - i - 1\]\) return false;
-i++;
-}
-return true;
+*/
+var isPalindrome = function(x) {
+  if ((x = 0)) return false;
+  const numberArray = `${x}`.split("");
+  const numberArrayLength = numberArray.length;
+  var i = 0;
+  while (i <= Math.ceil(numberArrayLength / 2)) {
+    if (numberArray[i] !== numberArray[numberArrayLength - i - 1]) return false;
+    i++;
+  }
+  return true;
 };
+```
 
 ## \#13 Roman to Integer
 
