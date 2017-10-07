@@ -1,5 +1,27 @@
-#
-\#9 - Palindrome Number
+# \#104. Maximum Depth of Binary Tre
+* 2017-10-08
+* 第一次真的秒殺 + bug free 耶耶
+* 142ms, 21.47%
+
+```
+/**
+* Definition for a binary tree node.
+* function TreeNode(val) {
+* this.val = val;
+* this.left = this.right = null;
+* }
+*/
+/**
+* @param {TreeNode} root
+* @return {number}
+*/
+var maxDepth = function(root) {
+if (root === null) return 0;
+return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+};
+```
+
+# \#9 - Palindrome Number
 
 * 一開始不知道 palindrome number 是什麼ＸＤ
 * 重點應該在怎麼 **Do this without extra space**，因為這樣就不能用 string split reverse 做了
@@ -671,26 +693,3 @@ const next = nodes
 return next.length === 0 ? true : sym(next);
 };
 ```
-
-# \#104. Maximum Depth of Binary Tre
-* 第一次真的秒殺 + bug free 耶耶
-* 142ms, 21.47%
-
-```
-/**
-* Definition for a binary tree node.
-* function TreeNode(val) {
-* this.val = val;
-* this.left = this.right = null;
-* }
-*/
-/**
-* @param {TreeNode} root
-* @return {number}
-*/
-var maxDepth = function(root) {
-if (root === null) return 0;
-return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-};
-```
-
