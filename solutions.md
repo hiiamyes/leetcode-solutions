@@ -1,5 +1,43 @@
 # [Algorithms - Easy](https://leetcode.com/problemset/algorithms/?difficulty=Easy)
 
+## \#107. Binary Tree Level Order Traversal II
+
+* 原來我的做法比較接近 BFS
+* 在另外一個 function 裡面做 recursive
+* ref: https://discuss.leetcode.com/topic/7651/my-dfs-and-bfs-java-solution
+* 2017-10-09
+* 116ms, 93.57%
+* 第一次 beats percentage 這麼高 = =，果然別人解法超屌 zz
+
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+var result;
+var levelOrderBottom = function(root) {
+  result = [];
+  addNodeIntoResultUptoLevel(result, root, 0);
+  return result;
+};
+var addNodeIntoResultUptoLevel = function(result, node, level) {
+  if (node === null) return;
+  if (result[level] === undefined) result.unshift([]);
+  addNodeIntoResultUptoLevel(result, node.left, level + 1);
+  addNodeIntoResultUptoLevel(result, node.right, level + 1);
+  // console.log(result, level, node.val)
+  result[result.length - 1 - level].push(node.val);
+  // console.log(result)
+};
+```
+
 ## \#104. Maximum Depth of Binary Tre
 * 2017-10-08
 * 第一次真的秒殺 + bug free 耶耶
