@@ -1,5 +1,38 @@
 # [Algorithms - Easy](https://leetcode.com/problemset/algorithms/?difficulty=Easy)
 
+[Prettier](https://prettier.io/playground/)
+
+## \#108. Convert Sorted Array to Binary Search Tree
+* 2017-12-05
+* 偷看別人的 recursive 做法ＸＤ
+* 無法 bug free QQ, recursive 時的 index 搞錯
+* 115ms
+* 63.51%
+
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+var sortedArrayToBST = function(nums) {
+  if (nums.length === 0) return null;
+  const start = 0;
+  const end = nums.length - 1;
+  const mid = Math.floor((start + end) / 2);
+  let treeNode = new TreeNode(nums[mid]);
+  treeNode.left = sortedArrayToBST(nums.slice(start, mid));
+  treeNode.right = sortedArrayToBST(nums.slice(mid + 1, end + 1));
+  return treeNode;
+};
+```
+
 ## \#107. Binary Tree Level Order Traversal II
 
 * 原來我的做法比較接近 BFS
