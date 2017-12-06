@@ -2,6 +2,43 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#110. Balanced Binary Tree
+
+* 2017-12-06
+* 偷看別人的 down top 的做法ＸＤ
+* 自己開始寫後還是忘記然後又回頭再看一次 solution
+* 122ms
+* 51.27%
+
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isBalanced = function(root) {
+  return height(root) !== -1;
+};
+
+const height = node => {
+  if (!node) return 0;
+  const leftHeight = height(node.left);
+  if (leftHeight === -1) return -1;
+  const rightHeight = height(node.right);
+  if (rightHeight === -1) return -1;
+  if (Math.abs(leftHeight - rightHeight) > 1) {
+    return -1;
+  }
+  return Math.max(leftHeight, rightHeight) + 1;
+};
+```
+
 ## \#108. Convert Sorted Array to Binary Search Tree
 * 2017-12-05
 * 偷看別人的 recursive 做法ＸＤ
