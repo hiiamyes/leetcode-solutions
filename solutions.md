@@ -2,8 +2,35 @@
 
 [Prettier](https://prettier.io/playground/)
 
-## \#110. Balanced Binary Tree
+## \#
+* 2017-12-08
+* 有看 solution、沒有 bug free Q_Q
+* 99ms
+* 79.53%
 
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDepth = function(root) {
+  if (root === null) return 0;
+  const left = minDepth(root.left);
+  const right = minDepth(root.right);
+  return left === 0 || right === 0
+    ? left + right + 1
+    : Math.min(left, right) + 1;
+};
+```
+
+## \#110. Balanced Binary Tree
 * 2017-12-06
 * 偷看別人的 down top 的做法ＸＤ
 * 自己開始寫後還是忘記然後又回頭再看一次 solution
