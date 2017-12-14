@@ -3,6 +3,39 @@
 [Prettier](https://prettier.io/playground/)
 
 ## \#
+
+* 2017-12-14
+* 雖然知道該用 recursive 的方法做，但一開始還是卡在不知道該 top down 還是 down top QQ
+* 看了解答～
+* not bug free QQ
+* 109 ms
+* 62.16%
+
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} sum
+ * @return {boolean}
+ */
+var hasPathSum = function(root, sum) {
+  if (!root) return false;
+  if (root.left === null && root.right === null && root.val === sum)
+    return true;
+  return (
+    hasPathSum(root.left, sum - root.val) ||
+    hasPathSum(root.right, sum - root.val)
+  );
+};
+```
+
+## \#
 * 2017-12-08
 * 有看 solution、沒有 bug free Q_Q
 * 99ms
