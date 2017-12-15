@@ -33,7 +33,7 @@ var generate = function(numRows) {
 };
 ```
 
-## \#
+## \#112. Path Sum
 
 * 2017-12-14
 * 雖然知道該用 recursive 的方法做，但一開始還是卡在不知道該 top down 還是 down top QQ
@@ -66,7 +66,7 @@ var hasPathSum = function(root, sum) {
 };
 ```
 
-## \#
+## \#111. Minimum Depth of Binary Tree
 * 2017-12-08
 * 有看 solution、沒有 bug free Q_Q
 * 99ms
