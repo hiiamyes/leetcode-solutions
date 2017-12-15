@@ -2,6 +2,37 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#118. Pascal's Triangle
+* 2017-12-15
+* ya~ 第一次 bug free~
+* 但用了兩層 for-loop 效能應該不好...
+* 99ms
+* 48.87%
+
+```
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+  let pascalTriangle = [];
+  for (let i = 0; i < numRows; i += 1) {
+    for (let j = 0; j < i + 1; j += 1) {
+      if (j === 0) {
+        pascalTriangle[i] = [1];
+      } else if (j === i) {
+        pascalTriangle[i].push(1);
+      } else {
+        pascalTriangle[i].push(
+          pascalTriangle[i - 1][j - 1] + pascalTriangle[i - 1][j]
+        );
+      }
+    }
+  }
+  return pascalTriangle;
+};
+```
+
 ## \#
 
 * 2017-12-14
