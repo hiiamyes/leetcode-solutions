@@ -2,6 +2,56 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#119. Pascal's Triangle II
+* 2017-12-17
+* 限制 O(k)
+* 不看 discuss, bug not free, 效能超差
+* 106ms
+* 28.97%
+
+```
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+var getRow = function(rowIndex) {
+  let pascalTriangle = [];
+  for (let i = 0; i <= rowIndex; i += 1) {
+    const addup = [1];
+    pascalTriangle.push(1);
+    addup.push(pascalTriangle[1]);
+    for (let j = 1; j < i; j += 1) {
+      pascalTriangle[j] = addup.reduce((a, b) => a + b);
+      addup.shift();
+      addup.push(pascalTriangle[j + 1]);
+    }
+  }
+  return pascalTriangle;
+};
+```
+
+* 2017-12-18
+* 看 discuss 後發現果然原本做法超浪費
+* 75ms
+* 100%
+
+```
+/**
+ * @param {number} rowIndex
+ * @return {number[]}
+ */
+var getRow = function(rowIndex) {
+  let pt = new Array(rowIndex + 1).fill(0);
+  pt[0] = 1;
+  for (let i = 1; i <= rowIndex; i++) {
+    for (let j = i; j > 0; j--) {
+      pt[j] += pt[j - 1];
+    }
+  }
+  return pt;
+};
+```
+
 ## \#118. Pascal's Triangle
 * 2017-12-15
 * ya~ 第一次 bug free~
