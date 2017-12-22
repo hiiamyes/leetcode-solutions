@@ -2,6 +2,29 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#121. Best Time to Buy and Sell Stock
+* 2017-12-22
+* 別人的解法看了一陣子才搞懂為什麼 = =
+* 95ms
+* 79%
+
+```
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+  let cur = 0;
+  let profit = 0;
+  for (let i = 1; i < prices.length; i++) {
+    cur = Math.max(0, (cur += prices[i] - prices[i - 1]));
+    profit = Math.max(profit, cur);
+  }
+  return profit;
+};
+
+```
+
 ## \#119. Pascal's Triangle II
 * 2017-12-17
 * 限制 O(k)
