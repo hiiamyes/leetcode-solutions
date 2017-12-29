@@ -2,6 +2,27 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#125. Valid Palindrome
+* 2017-12-29
+* 應該算暴力解吧
+* 142 ms
+* 39.78 %
+
+```
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+  const a = s.replace(/\W/g, "").split("");
+  if (a.length < 2) return true;
+  for (let i = 0; i < a.length / 2 - a.length % 2; i++) {
+    if (a[i].toLowerCase() !== a[a.length - 1 - i].toLowerCase()) return false;
+  }
+  return true;
+};
+```
+
 ## \#122. Best Time to Buy and Sell Stock II
 * 2017-12-29
 * bug free~
