@@ -4,6 +4,27 @@
 
 ## \#125. Valid Palindrome
 * 2017-12-29
+* 乾淨解但比較慢
+* 158 ms
+* 24.54 %
+
+```
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+  const a = s.replace(/\W/g, "").toLowerCase();
+  return (
+    a ===
+    a
+      .split("")
+      .reverse()
+      .join("")
+  );
+};
+```
+
 * 應該算暴力解吧
 * 142 ms
 * 39.78 %
