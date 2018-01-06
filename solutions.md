@@ -3,6 +3,7 @@
 [Prettier](https://prettier.io/playground/)
 
 ## \#155. Min Stack
+* 2018-01-06
 * 第一次寫 prototype
 * 還是搞不太懂 this
 * sort() 是 mutable 的，配合 concat() 算有點 tricky 的方式達成 immutable?
