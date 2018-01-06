@@ -2,6 +2,62 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#155. Min Stack
+* 第一次寫 prototype
+* 還是搞不太懂 this
+* sort() 是 mutable 的，配合 concat() 算有點 tricky 的方式達成 immutable?
+* 慢炸了
+* 333 ms
+* 9.8 %
+
+```
+/**
+ * initialize your data structure here.
+ */
+var MinStack = function() {
+  this.stack = [];
+};
+
+/**
+ * @param {number} x
+ * @return {void}
+ */
+MinStack.prototype.push = function(x) {
+  this.stack.push(x);
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function() {
+  this.stack.pop();
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function() {
+  return this.stack[this.stack.length - 1];
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function() {
+  // return this.stack.concat().sort((a,b) => a-b)[0]
+  return Math.min(...this.stack);
+};
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = Object.create(MinStack).createNew()
+ * obj.push(x)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
+```
+
 ## \#125. Valid Palindrome
 * 2017-12-29
 * 乾淨解但比較慢
