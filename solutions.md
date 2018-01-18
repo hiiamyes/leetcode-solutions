@@ -2,7 +2,7 @@
 
 [Prettier](https://prettier.io/playground/)
 
-## \#
+## \#160. Intersection of Two Linked Lists
 * 2018-01-18
 * 看 discuss 的解法，好聰明，利用交換 head 的方式靠 difference 差距變小最後發現 intersection，所以不會是暴力解的 O(mn) 而是 O(m+n) time，memeory 也可以 O(1)
 * linked list intersection 的特點（或說我一開始沒注意到的）是 intersect 後不會再分開
