@@ -2,6 +2,40 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#
+* 2018-01-18
+* 看 discuss 的解法，好聰明，利用交換 head 的方式靠 difference 差距變小最後發現 intersection，所以不會是暴力解的 O(mn) 而是 O(m+n) time，memeory 也可以 O(1)
+* linked list intersection 的特點（或說我一開始沒注意到的）是 intersect 後不會再分開
+* 140ms
+* 57.14%
+
+```
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+  if (headA === null && headB === null) return null;
+  let a = headA;
+  let b = headB;
+
+  while (a !== b) {
+    a = a === null ? headB : a.next;
+    b = b === null ? headA : b.next;
+  }
+  return a;
+};
+```
+
 ## \#155. Min Stack
 * 2018-01-06
 * 第一次寫 prototype
