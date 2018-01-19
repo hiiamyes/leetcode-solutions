@@ -2,6 +2,31 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#167. Two Sum II - Input array is sorted
+* 2018-01-19
+* 因為是 sorting 過的 array，所以可以用 shrink 的方法從頭尾開始檢查，timeC 就變成 O(n)
+* 38.64%
+* 105 ms
+```
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(numbers, target) {
+  let index1 = 0,
+    index2 = numbers.length - 1;
+  while (numbers[index1] + numbers[index2] !== target) {
+    if (numbers[index1] + numbers[index2] > target) {
+      index2 -= 1;
+    } else if (numbers[index1] + numbers[index2] < target) {
+      index1 += 1;
+    }
+  }
+  return [index1 + 1, index2 + 1];
+};
+```
+
 ## \#160. Intersection of Two Linked Lists
 * 2018-01-18
 * 看 discuss 的解法，好聰明，利用交換 head 的方式靠 difference 差距變小最後發現 intersection，所以不會是暴力解的 O(mn) 而是 O(m+n) time，memeory 也可以 O(1)
