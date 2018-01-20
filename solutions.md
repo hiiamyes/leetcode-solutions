@@ -2,6 +2,29 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#168. Excel Sheet Column Title
+* 2018-01-20
+* 原來是 10 進位轉 26 進位呀
+* 43.71 %
+* 91 ms
+
+```
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var convertToTitle = function(n) {
+    // 'A'.charCodeAt() = 65;
+    // 'Z'.charCodeAt() = 90;
+    let columnTitle = ''
+    while(n !== 0) {
+        columnTitle = String.fromCharCode((n-1)%26+65) + columnTitle; 
+        n = Math.floor((n-1)/26)
+    }
+    return columnTitle;
+};
+```
+
 ## \#167. Two Sum II - Input array is sorted
 * 2018-01-19
 * 因為是 sorting 過的 array，所以可以用 shrink 的方法從頭尾開始檢查，timeC 就變成 O(n)
