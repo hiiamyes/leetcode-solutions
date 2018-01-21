@@ -2,6 +2,29 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#
+* 2018-01-21
+* 原來不用真的知道每個數字出現多少次，靠 difference 就能找出 majority element
+* 100 ms
+* 80.43 %
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let majority = nums[0], count = 1;
+    for(let i = 1; i<nums.length; i++) {
+        count = majority === nums[i] ? count+1:count-1;
+        if(count === 0) {
+            majority = nums[i];
+            count = 1;
+        }
+    }
+    return majority
+};
+```
+
 ## \#168. Excel Sheet Column Title
 * 2018-01-20
 * 原來是 10 進位轉 26 進位呀
