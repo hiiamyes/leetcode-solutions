@@ -2,7 +2,29 @@
 
 [Prettier](https://prettier.io/playground/)
 
-## \#
+## \#171. Excel Sheet Column Number
+* 2018-01-22
+* bug free~
+* 26 進位轉 10 進位
+* 120 ms
+* 74.17 %
+
+```
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var titleToNumber = function(s) {
+  const chars = s.split("");
+  let number = 0;
+  for (let i = 0; i < chars.length; i++) {
+    number += (chars[chars.length - 1 - i].charCodeAt() - 64) * Math.pow(26, i);
+  }
+  return number;
+};
+```
+
+## \#169. Majority Element
 * 2018-01-21
 * 原來不用真的知道每個數字出現多少次，靠 difference 就能找出 majority element
 * 100 ms
