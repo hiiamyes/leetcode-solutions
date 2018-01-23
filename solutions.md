@@ -2,6 +2,32 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#3. Longest Substring Without Repeating Characters
+* 2018-01-23
+* 好久沒做 Medium 的了想好久...
+* Sliding Window Optimized 是最好的解法 by hashmap
+* 145 ms
+* 91.20 %
+```
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  let length = 0,
+    chars = new Map();
+  for (let i = 0, j = 0; j < s.length; j++) {
+    const char = s.charAt(j);
+    if (chars.has(char)) {
+      i = Math.max(i, chars.get(char) + 1);
+    }
+    chars.set(char, j);
+    length = Math.max(length, j - i + 1);
+  }
+  return length;
+};
+```
+
 ## \#171. Excel Sheet Column Number
 * 2018-01-22
 * bug free~
