@@ -2,6 +2,28 @@
 
 [Prettier](https://prettier.io/playground/)
 
+
+## \#172. Factorial Trailing Zeroes
+* 2018-01-24
+* so tricky, 取 5 的倍數
+* 111 ms
+* 49.38 %
+
+```
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var trailingZeroes = function(n) {
+  let count = 0;
+  while (n / 5 >= 1) {
+    count += Math.floor(n / 5);
+    n = n / 5;
+  }
+  return count;
+};
+```
+
 ## \#3. Longest Substring Without Repeating Characters
 * 2018-01-23
 * 好久沒做 Medium 的了想好久...
