@@ -2,6 +2,26 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#189. Rotate Array
+* 2018-01-26
+* 聽說可以有很多種做法？
+* 189 ms
+* 27.93 %
+* pop 再 unshift 應該算 brute force = =
+
+```
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function(nums, k) {
+  for (let i = 0; i < k; i++) {
+    const p = nums.pop();
+    nums.unshift(p);
+  }
+};
+```
 
 ## \#172. Factorial Trailing Zeroes
 * 2018-01-24
