@@ -2,6 +2,30 @@
 
 [Prettier](https://prettier.io/playground/)
 
+##
+
+## \#190. Reverse Bits
+* 2018-01-29
+* 各種 bitwise 操作
+* JavaScript uses 32 bits signed integers，所以這題最後要加個 >>> 0 做 unsigned operation。ref: https://www.w3schools.com/js/js_bitwise.asp
+* 108 ms
+* 93.27 %
+```
+/**
+ * @param {number} n - a positive integer
+ * @return {number} - a positive integer
+ */
+var reverseBits = function(n) {
+  let result = 0;
+  for (let i = 0; i < 32; i++) {
+    result += n & 1;
+    n >>>= 1;
+    if (i < 31) result <<= 1;
+  }
+  return result >>> 0;
+};
+```
+
 ## \#189. Rotate Array
 * 2018-01-26
 * 聽說可以有很多種做法？
