@@ -2,7 +2,28 @@
 
 [Prettier](https://prettier.io/playground/)
 
-##
+
+
+## \#191. Number of 1 Bits
+* 2018-01-31
+* bitwise 操作
+* 121 ms
+* 41.67 %
+
+```
+/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+var hammingWeight = function(n) {
+  let numberOfOne = 0;
+  for (let i = 0; i < 32; i++) {
+    if (n & 1) numberOfOne++;
+    n = n >> 1;
+  }
+  return numberOfOne;
+};
+```
 
 ## \#190. Reverse Bits
 * 2018-01-29
@@ -10,6 +31,7 @@
 * JavaScript uses 32 bits signed integers，所以這題最後要加個 >>> 0 做 unsigned operation。ref: https://www.w3schools.com/js/js_bitwise.asp
 * 108 ms
 * 93.27 %
+
 ```
 /**
  * @param {number} n - a positive integer
