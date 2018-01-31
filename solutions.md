@@ -2,7 +2,31 @@
 
 [Prettier](https://prettier.io/playground/)
 
+##
 
+## \#198. House Robber
+* 2018-02-11
+* 有點 recursive 的味道，但好難想到...
+* 89 ms
+* 51.13 %
+
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var rob = function(nums) {
+  if (nums.length === 0) return 0;
+  if (nums.length === 1) return nums[0];
+  let rub = [];
+  rub[0] = nums[0];
+  rub[1] = Math.max(rub[0], nums[1]);
+  for (let i = 2; i < nums.length; i++) {
+    rub[i] = Math.max(rub[i - 2] + nums[i], rub[i - 1]);
+  }
+  return rub[nums.length - 1];
+};
+```
 
 ## \#191. Number of 1 Bits
 * 2018-01-31
