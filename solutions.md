@@ -3,6 +3,36 @@
 [Prettier](https://prettier.io/playground/)
 
 ##
+* 2018-02-11
+* Floyd Cycle detection algorithm (Linked List Cycle detection problem)
+* 97 ms
+* 89.42 %
+
+```
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+  let slow = (fast = n);
+  do {
+    slow = digitSquareSum(slow);
+    fast = digitSquareSum(digitSquareSum(fast));
+    if (fast === 1) return true;
+  } while (slow !== fast);
+  return fast === 1;
+};
+
+function digitSquareSum(d) {
+  let sum = 0;
+  while (d >= 1) {
+    tmp = d % 10;
+    sum += tmp * tmp;
+    d = Math.floor(d / 10);
+  }
+  return sum;
+}
+```
 
 ## \#198. House Robber
 * 2018-02-11
