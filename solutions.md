@@ -2,8 +2,34 @@
 
 [Prettier](https://prettier.io/playground/)
 
-##
-* 2018-02-11
+## \#203. Remove Linked List Elements
+* 2018-02-01
+* recursive + linked list
+* 125 ms
+* 47.71 %
+
+```
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var removeElements = function(head, val) {
+  if (head === null) return head;
+  head.next = removeElements(head.next, val);
+  return head.val === val ? head.next : head;
+};
+```
+
+## \#Happy Number
+* 2018-02-01
 * Floyd Cycle detection algorithm (Linked List Cycle detection problem)
 * 97 ms
 * 89.42 %
@@ -35,7 +61,7 @@ function digitSquareSum(d) {
 ```
 
 ## \#198. House Robber
-* 2018-02-11
+* 2018-02-01
 * 有點 recursive 的味道，但好難想到...
 * 89 ms
 * 51.13 %
