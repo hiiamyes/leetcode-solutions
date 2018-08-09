@@ -2,6 +2,10 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#204. Count Primes
+* 2018-08-09
+
+
 ## \#203. Remove Linked List Elements
 * 2018-02-01
 * recursive + linked list
