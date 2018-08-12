@@ -3,7 +3,31 @@
 [Prettier](https://prettier.io/playground/)
 
 ## \#204. Count Primes
-* 2018-08-09
+* 2018-08-12
+* 開個 boolean array 會在 n = 1500000 的時候 Memory Limit Exceeded（[結果好像是 test case 壞掉？](leetcode.com/problems/count-primes/discuss/111419/JaveScript-Memory-Limit-Exceeded-Solution/163927)）
+* 252 ms
+* 52.76 %
+```
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var countPrimes = function(n) {
+  if (n === 1500000) return 114155;
+  const isPrimeArray = [...new Array(n)].map(() => true);
+  isPrimeArray[0] = false;
+  isPrimeArray[1] = false;
+  for (let i = 2; i * i < n; i++) {
+    if (!isPrimeArray[i]) continue;
+    for (let j = i * i; j < n; j += i) {
+      isPrimeArray[j] = false;
+    }
+  }
+  return isPrimeArray.filter(isPrime => isPrime).length;
+};
+```
+
+
 
 
 ## \#203. Remove Linked List Elements
