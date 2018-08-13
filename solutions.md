@@ -2,6 +2,43 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#205. Isomorphic Strings
+* 2018-08-13
+```
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isIsomorphic = function(s, t) {
+  for (let i = 1; i < s.length; i++) {
+    const ss = s.charAt(i - 1) === s.charAt(i);
+    const tt = t.charAt(i - 1) === t.charAt(i);
+    if (ss !== tt) return false;
+  }
+  return true;
+};
+```
+* 沒考慮到同個字母要換成同個字母，所以 "egga" "adda" 是 false 但被我判斷成 true
+* 看 Discuss 發現 python 有很好用的 zip + set [解法](https://leetcode.com/problems/isomorphic-strings/discuss/57941/Python-different-solutions-(dictionary-etc).)！
+```
+def isIsomorphic3(self, s, t):
+    return len(set(zip(s, t))) == len(set(s)) == len(set(t))   
+```
+* 108 ms
+* 10.31 %... 好爛 = =
+```
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isIsomorphic = function(s, t) {    
+    const zip = s.split('').map((sc, i) => sc + t.charAt(i))
+    return new Set(zip).size === new Set(s).size  && new Set(s).size === new Set(t).size
+};
+```
+
 ## \#204. Count Primes
 * 2018-08-12
 * 開個 boolean array 會在 n = 1500000 的時候 Memory Limit Exceeded（[結果好像是 test case 壞掉？](leetcode.com/problems/count-primes/discuss/111419/JaveScript-Memory-Limit-Exceeded-Solution/163927)）
