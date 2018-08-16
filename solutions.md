@@ -2,6 +2,36 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#206. Reverse Linked List
+* 2018-08-16
+* 56 ms
+* 100 % = = 騙人的吧...
+```
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+  if (!head) return head;
+  let buffer = [];
+  let x = head;
+  while (x.val !== null) {
+    buffer.push(x.val);
+    if (x.next === null) break;
+    x = x.next;
+  }
+  result = buffer.reverse();
+  return result;
+};
+```
+
 ## \#205. Isomorphic Strings
 * 2018-08-13
 ```
