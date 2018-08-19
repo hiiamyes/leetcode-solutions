@@ -2,6 +2,29 @@
 
 [Prettier](https://prettier.io/playground/)
 
+## \#217. Contains Duplicate
+* 2018-08-19
+* 72 ms
+* 94.29 %
+* 成功利用 Set 判斷 Distinct / Duplicate
+```
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+  let s = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    if (s.has(nums[i])) {
+      return true;
+    } else {
+      s.add(nums[i]);
+    }
+  }
+  return false;
+};
+```
+
 ## \#206. Reverse Linked List
 * 2018-08-16
 * 56 ms
