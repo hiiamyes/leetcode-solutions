@@ -2,6 +2,36 @@
 
 [Prettier](https://prettier.io/playground/)
 
+##
+* 2018-08-19
+* 72 ms
+* 92.73 %
+* 跟 217 相比，因為多了 k 要比較，所以從 Set 改成用 Map
+```
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {boolean}
+ */
+var containsNearbyDuplicate = function(nums, k) {
+  let m = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const n = nums[i];
+    const j = m.get(n);
+    if (j === undefined) {
+      m.set(n, i);
+    } else {
+      if (i - j <= k) {
+        return true;
+      } else {
+        m.set(n, i);
+      }
+    }
+  }
+  return false;
+};
+```
+
 ## \#217. Contains Duplicate
 * 2018-08-19
 * 72 ms
